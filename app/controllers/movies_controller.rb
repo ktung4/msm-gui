@@ -1,4 +1,12 @@
 class MoviesController < ApplicationController
+ 
+
+  def create
+    m = Movie.new
+    m.title = params.fetch("the_title")
+
+  end
+
   def index
     matching_movies = Movie.all
     @list_of_movies = matching_movies.order({ :created_at => :desc })
